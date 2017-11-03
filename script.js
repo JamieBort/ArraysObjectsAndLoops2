@@ -101,13 +101,16 @@ Answer: This function should output the string "*\n**\n***\n****\n*****\n"
 
 function printTriangle() {
   // Your answer goes here:
-  for (var i = 0; i < 4; i++) {
-    var a = "";
-    a = a + "*";
-    // + "*";
-    console.log(a);
+  let star = "";
+  let addition = "";
+
+  for (let i = 0; i < 5; i++) {
+    star = star + "*";
+    addition = addition + star + "\n";
   }
-  }
+  return addition;
+}
+
 
 /*
 4. The "matrix" array contains arrays of letters. "matrix" is an array of arrays. Nested arrays are sometimes referred to as "multi-dimensional" array. To access information from a multi-dimensional array, use bracket notation.
@@ -137,15 +140,18 @@ let matrix = [
   ["g", "h", "i"]
 ];
 
-console.log(matrix[1][2]);
-
 function transpose() {
+
   var newMatrix = [];
   // Your answer goes here:
-  // for (var i = 0; i < 2; i++) {
-  //   for (var j = 0; j < 2; j++) {
-  //     newMatrix[j][i] = matrix[i][j];
-  //   }
-  // }
-  // return newMatrix;
+  for (let i = 0; i < 3; i++) {
+    let newRow = [];
+    for (let j = 0; j < 3; j++) {
+
+      // newMatrix[j][i] = matrix[i][j];
+      newRow.push(matrix[j][i]);
+    }
+    newMatrix.push(newRow);
+  }
+  return newMatrix;
 }
