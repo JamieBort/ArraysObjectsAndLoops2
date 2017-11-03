@@ -13,10 +13,16 @@ HINT: You will need to initialize a variable to store the total number and to re
 
 Answer: This function should return the number 18406.
 */
-let numberArray = [ 23, 234, 64 , 89, 2, 756, 3, 58, 674, 32, 756, 23, 6 ];
+let numberArray = [23, 234, 64, 89, 2, 756, 3, 58, 674, 32, 756, 23, 6];
 
-function getBigNumber(){
-    // Your answer goes here:
+function getBigNumber() {
+  // Your answer goes here:
+  let largeNumber = 0;
+  for (var i = 0; i < numberArray.length; i++) {
+    largeNumber = largeNumber + [i] * numberArray[i];
+    // console.log([i]*numberArray[i]);
+  }
+  return largeNumber;
 }
 
 /*
@@ -32,16 +38,40 @@ Answer: This function should return:
 NOTE: The people object has been written compactly to make it easier to read and to occupy fewer lines in the document.
 */
 
-let people = [
-    { name : "Anne",   age : 22 },
-    { name : "Benton", age : 7  },
-    { name : "Chris",  age : 35 },
-    { name : "Donna",  age : 12 },
-    { name : "Conor",  age : 85 }
+let people = [{
+    name: "Anne",
+    age: 22
+  },
+  {
+    name: "Benton",
+    age: 7
+  },
+  {
+    name: "Chris",
+    age: 35
+  },
+  {
+    name: "Donna",
+    age: 12
+  },
+  {
+    name: "Conor",
+    age: 85
+  }
 ];
 
-function checkPeopleStatus(){
-    // Your answer goes here:
+function checkPeopleStatus() {
+  // Your answer goes here:
+  for (var i = 0; i < people.length; i++) {
+    if (people[i].age < 18) {
+      people[i].status = "minor"
+    } else if (people[i].age > 65) {
+      people[i].status = "senior"
+    } else {
+      people[i].status = "adult"
+    }
+  }
+  return people;
 }
 
 
@@ -69,9 +99,15 @@ The solution file contains two ways to accomplish this task.
 Answer: This function should output the string "*\n**\n***\n****\n*****\n"
 */
 
-function printTriangle(){
-    // Your answer goes here:
-}
+function printTriangle() {
+  // Your answer goes here:
+  for (var i = 0; i < 4; i++) {
+    var a = "";
+    a = a + "*";
+    // + "*";
+    console.log(a);
+  }
+  }
 
 /*
 4. The "matrix" array contains arrays of letters. "matrix" is an array of arrays. Nested arrays are sometimes referred to as "multi-dimensional" array. To access information from a multi-dimensional array, use bracket notation.
@@ -96,12 +132,20 @@ Answer: This function should return:
 */
 
 let matrix = [
-    [ "a", "b", "c" ],
-    [ "d", "e", "f" ],
-    [ "g", "h", "i" ]
+  ["a", "b", "c"],
+  ["d", "e", "f"],
+  ["g", "h", "i"]
 ];
 
-function transpose(){
-    let newMatrix = [];
-    // Your answer goes here:
+console.log(matrix[1][2]);
+
+function transpose() {
+  var newMatrix = [];
+  // Your answer goes here:
+  // for (var i = 0; i < 2; i++) {
+  //   for (var j = 0; j < 2; j++) {
+  //     newMatrix[j][i] = matrix[i][j];
+  //   }
+  // }
+  // return newMatrix;
 }
